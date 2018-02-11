@@ -1,19 +1,17 @@
-const pizza = {
-  name: "Pepperoni",
-  price: 15,
-  getName() {
-    return this.name;
-  }
-};
-
-const toppings = ["pepperoni"];
-
-const order = { pizza, toppings };
-
-console.log(order);
-
-function createOrder(pizza, toppings) {
-  return { pizza, toppings };
+function sumAll(arr) {
+  arr.reduce((prev, next) => prev + next);
 }
 
-console.log(createOrder(pizza, toppings));
+const sum = sumAll([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+console.log(sum);
+
+function sumAll2(message, ...arr) {
+  console.log(message);
+  console.log(arguments);
+  arr.reduce((prev, next) => prev + next);
+}
+
+const sum2 = sumAll2("Hello!", 1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+console.log(sum2);
