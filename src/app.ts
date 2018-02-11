@@ -1,12 +1,19 @@
-const pizzas = [{ name: "Pepperoni", toppings: ["pepperoni"] }];
-
-const mappedPizzas = pizzas.map(({ name }) => name.toUpperCase());
-
-console.log(mappedPizzas);
-
 const pizza = {
-  name: "Blazing Inferno",
-  getName: () => pizza.name
+  name: "Pepperoni",
+  price: 15,
+  getName() {
+    return this.name;
+  }
 };
 
-console.log(pizza.getName());
+const toppings = ["pepperoni"];
+
+const order = { pizza, toppings };
+
+console.log(order);
+
+function createOrder(pizza, toppings) {
+  return { pizza, toppings };
+}
+
+console.log(createOrder(pizza, toppings));
